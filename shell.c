@@ -48,10 +48,7 @@ int main(int argc, char *argv[], char *env[])
 		}
 		_env(commtoken);
 		tmp = strtok(commtoken, " ");
-		printf("\ntmp -> %s\n", tmp);
 		argtoken = strtok(NULL, " ");
-		printf("\nargtoken -> %s\n", argtoken);
-		printf("\ntmp -> %s\n", tmp);
 
 		if (argtoken != NULL)
 		{

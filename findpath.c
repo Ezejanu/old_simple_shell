@@ -22,12 +22,11 @@ char *findpath(char *command, char *argv[], char *env[])
 		strcat(filepath, "/");
 		strcat(filepath, command);
 		strcat(filepath, "\0");
-		printf("%s \tstat -> %d\n", filepath,stat(filepath, &statbuf) );
 		
 		if (stat(filepath, &statbuf) == 0)
 		{
 			free(duplicate);
-			strcpy(argv[0], filepath);
+			argv[0] = strdup(filepath);
 			_fork(argv, env);
 			empty(argv);
 			free(argv[0]);
