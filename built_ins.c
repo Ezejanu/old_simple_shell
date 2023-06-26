@@ -45,7 +45,7 @@ void _printenv()
  * @tmpenv: command to be compared and printed
  */
 
-void _env(char *tmpenv)
+int _env(char *tmpenv)
 {
 	int i, comm_leng;
 	struct stat statbuf;
@@ -60,18 +60,18 @@ void _env(char *tmpenv)
 					if (stat(tmpenv, &statbuf) == 0)
 					{
 						_printenv(tmpenv);
-						return;
+						return (-1);
 					}
 			}
 	}
 
 	if (_strlen(tmpenv) != 3)
-		return;
+		return (0);
 	
 	for (i = 0; i < 3; i++)
 	{
 		if (tmpenv[i] != Env[i])
-			return;
+			return (0);
 	}
-	_printenv(tmpenv);
+	return (1);
 }

@@ -22,7 +22,8 @@ int _strcmp(char *s1, char *s2);
 
 char *findpath(char *command, char *argv[], char *env[]);
 int endprog(char *command);
-void _env(char *tmpenv);
+int _env(char *tmpenv);
+void _printenv();
 void empty(char *argv[]);
 void allocate (char *str[]);
 void _write(char *str);

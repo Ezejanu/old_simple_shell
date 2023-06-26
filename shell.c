@@ -46,7 +46,8 @@ int main(int argc, char *argv[], char *env[])
 			free(command);
 			exit(EXIT_SUCCESS);
 		}
-		_env(commtoken);
+		if(_env(commtoken))
+			_printenv();
 		tmp = strtok(commtoken, " ");
 		argtoken = strtok(NULL, " ");
 
