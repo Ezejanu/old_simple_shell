@@ -27,7 +27,6 @@ char *findpath(char *command, char *argv[], char *env[])
 		if (stat(filepath, &statbuf) == 0)
 		{
 			free(duplicate);
-			argv[0] = malloc(strlen(filepath) + 1);
 			strcpy(argv[0], filepath);
 			_fork(argv, env);
 			empty(argv);
