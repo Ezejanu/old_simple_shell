@@ -19,6 +19,7 @@ int main(int argc, char *argv[], char *env[])
 	char *command = NULL, *commtoken = NULL;
 	char *tmp = NULL, *argtoken = NULL;
 	size_t n = 0; int i = 1;
+	int gline = 0;
 	(void) argc;
 	(void) argv;
 	(void) env;
@@ -29,7 +30,8 @@ int main(int argc, char *argv[], char *env[])
 	_write(shellprompt);
 	while (!interrupted)
 	{
-		if (getline(&command, &n, stdin) == -1)
+		gline = getline(&command, &n, stdin);
+		if (gline  == -1)
 		{
 			free(command);
 			return (-1);
@@ -46,8 +48,10 @@ int main(int argc, char *argv[], char *env[])
 		}
 		_env(commtoken);
 		tmp = strtok(commtoken, " ");
+		printf("\ntmp -> %s\n", tmp);
 		argtoken = strtok(NULL, " ");
-
+		printf("\nargtoken -> %s\n", argtoken);
+		printf("\ntmp -> %s\n", tmp);
 
 		if (argtoken != NULL)
 		{
@@ -58,8 +62,12 @@ int main(int argc, char *argv[], char *env[])
 		}
 		argv[i] ='\0';
 		
-	
-		findpath(tmp, argv, env);	
+			
+		if (findpath(tmp, argv, env) != NULL)
+		{
+			argv[0] = tmp;
+			_fork(argv, env);
+		}	
 		empty(argv);
 		i = 1;
 		free(argv[0]);

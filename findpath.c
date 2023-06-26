@@ -22,12 +22,16 @@ char *findpath(char *command, char *argv[], char *env[])
 		strcat(filepath, "/");
 		strcat(filepath, command);
 		strcat(filepath, "\0");
-
+		printf("%s \tstat -> %d\n", filepath,stat(filepath, &statbuf) );
+		
 		if (stat(filepath, &statbuf) == 0)
 		{
 			free(duplicate);
+			argv[0] = malloc(strlen(filepath) + 1);
 			strcpy(argv[0], filepath);
 			_fork(argv, env);
+			empty(argv);
+			free(argv[0]);
 			return (NULL);
 		}
 		else
@@ -35,6 +39,8 @@ char *findpath(char *command, char *argv[], char *env[])
 	}
 	free(duplicate);
 	perror("Error");
+
+	free(argv[0]);
 	return (NULL);
 }
 
