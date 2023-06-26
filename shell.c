@@ -17,7 +17,7 @@ int main(int argc, char *argv[], char *env[])
 {
 	char *shellprompt = "shell $: ";
 	char *command = NULL, *commtoken = NULL;
-	char *tmp = NULL, *argtoken = NULL, *Error = "error";
+	char *tmp = NULL, *argtoken = NULL;
 	size_t n = 0; int i = 1;
 	(void) argc;
 	(void) argv;
@@ -57,27 +57,17 @@ int main(int argc, char *argv[], char *env[])
 			((argtoken = strtok(NULL, " ")));
 		}
 		argv[i] ='\0';
-		if (check_command(tmp) == 4)
-		{
-			argv[0] = tmp;
-			_fork(argv, env);
-		}
-		if (findpath(tmp) != Error)
-		{
-			argv[0] = findpath(tmp);
-			_fork(argv, env);
-		}
-
+		
+	
+		findpath(tmp, argv, env);	
+		empty(argv);
+		i = 1;
+		free(argv[0]);
+		
 		_write(shellprompt);
 
-
-
-
-
-
-
 	}
-
+	
 	free(command);
 return(0);
 }
