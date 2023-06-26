@@ -40,7 +40,7 @@ int check_command(char *command)
 
 /*	char *commtoken = NULL;*/
 /*	char *tmpcmp = NULL; *tmpenv = NULL;*/
-    char *new_line = "\n";	char *prompt = "our shell $: ";
+    char *new_line = "\n";	char *prompt = "shell $: ";
 	struct stat statbuf;
 	if (strcmp(command, new_line) == 0)
 	{
