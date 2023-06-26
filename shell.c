@@ -65,15 +65,14 @@ int main(int argc, char *argv[], char *env[])
 		{
 			argv[0] = tmp;
 			_fork(argv, env);
-		}	
 		empty(argv);
-		i = 1;
+
 		free(argv[0]);
-		
+		}
+		i = 1;
 		_write(shellprompt);
 
 	}
-	
 	free(command);
 return(0);
 }

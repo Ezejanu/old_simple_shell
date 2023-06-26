@@ -30,6 +30,7 @@ char *findpath(char *command, char *argv[], char *env[])
 			_fork(argv, env);
 			empty(argv);
 			free(argv[0]);
+			
 			return (NULL);
 		}
 		else

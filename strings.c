@@ -70,7 +70,9 @@ char *_strdup(char *str)
 	char *duplicate;
 
 	length = _strlen(str);
-	duplicate = malloc(length + 1);
+	duplicate = malloc(sizeof(char) * length + 1);
+	if (duplicate == NULL)
+		return (NULL);
 
 	for (i = 0; str[i]; i++)
 	{
