@@ -8,12 +8,8 @@
 
 int endprog(char **argv)
 {
-	int i = 0;
-
-	i = atoi(argv[1]);
-
 	if (argv[1])
-		return (i);
+		return (atoi(argv[1]));
 
 	else
 		return (0);
@@ -64,8 +60,8 @@ int _cd(char **argv)
 }
 
 /**
- * help - a function to display help
- * @argv - string containing arguments
+ * _help - a function to display help
+ * @argv: string containing arguments
  * Return: (-1) for success, (0) if not success
  */
 
