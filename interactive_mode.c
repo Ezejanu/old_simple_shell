@@ -10,6 +10,7 @@ void interactive_mode(void)
 {
 	char *Stdin, **argv;
 	int status = -1;
+	char *prompt = "theprompt$: ";
 
 	do {
 		_write(prompt);

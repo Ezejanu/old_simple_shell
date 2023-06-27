@@ -1,5 +1,4 @@
-This is a project to build a simple shell. 
+This is a project to build a simple shell.
+The collaborators on this project are:
 
-The collaborators on this project are: 
-
-Aishah Mabayoje Ezejanu Dike
+Aishah Mabayoje and  Ezejanu Dike
