@@ -13,14 +13,14 @@ int execute(char **argv)
 	char *builtins_list[] = {
 		"cd",
 		"env",
-		/*"help",
-		"exit"*/
+		"exit"
+		/* "help" */
 	};
 	int (*builtins[])(char **) = {
 		&_cd,
 		&_env,
-		/*&_help,
-		&_exit*/
+		&_exit
+		/* &_help */
 	};
 	unsigned long int i = 0;
 
