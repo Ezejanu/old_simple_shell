@@ -15,17 +15,18 @@
 
 extern char **environ;
 
+/* Shell Mode */
 void interactive_mode(void);
 void non_interactive_mode(void);
 
-/*Interactive Mode*/
+/* Interactive Mode */
 char *read_stdin(void);
 char **tokenize_stdin(char *stdin);
 int execute(char **argv);
 
 int _process(char **argv);
 
-/*Non Interactive Mode*/
+/* Non Interactive Mode */
 char *read_strm(void);
 
 /*Built ins*/
