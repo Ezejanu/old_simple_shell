@@ -9,19 +9,19 @@
 void interactive_mode(void)
 {
 	char *Stdin, **argv;
-	int check = -1;
+	int status = -1;
 
-	do{
+	do {
 		_write(prompt);
 		Stdin = read_stdin();
 		argv = tokenize_stdin(Stdin);
-		check = execute(argv);
-		
+		status = execute(argv);
+
 		free(Stdin);
 		free(argv);
 
-		if (check >= 0)
-			exit(check);
-	}
-	while(check == -1);
+		if (status >= 0)
+			exit(status);
+	} while
+		(status == -1);
 }

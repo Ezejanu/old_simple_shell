@@ -37,5 +37,5 @@ int _env(char **argv);
 int _help(char **argv);
 
 /* Others */
-void _write (char *);
+void _write (char *str);
 #endif
