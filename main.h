@@ -13,7 +13,6 @@
 #define DELIM "\n\r\a\"\t"
 #define _sizeof(data_type)(char *)(&data_type + 1) - (char *)(&data_type)
 
-char *prompt = "theprompt$: ";
 extern char **environ;
 
 /* Shell Mode */
@@ -37,5 +36,5 @@ int _env(char **argv);
 int _help(char **argv);
 
 /* Others */
-void _write (char *str);
+void _write(char *str);
 #endif
