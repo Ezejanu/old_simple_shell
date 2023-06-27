@@ -18,7 +18,7 @@ char **tokenize_stdin(char *Stdin)
 
 	if (!all_tok)
 	{
-		fprint(stderr, "tokenize_stdin(): malloc() failed\n");
+		fprintf(stderr, "tokenize_stdin(): malloc() failed\n");
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(Stdin, DELIM);

@@ -4,7 +4,7 @@
  * non_interactive_mode - a function for a command line interpreter
  */
 
-void non_interactive_mode(void);
+void non_interactive_mode(void)
 {
 	char *Stdin, **argv;
 	int status = -1;

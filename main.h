@@ -31,7 +31,7 @@ char *read_strm(void);
 
 /*Built ins*/
 int _cd(char **argv);
-int _exit(char **argv);
+int endprog(char **argv);
 int _env(char **argv);
 int _help(char **argv);
 

@@ -54,7 +54,7 @@ char *read_strm(void)
 		input = getchar();
 		if (input == EOF)
 		{
-			free(line);
+			free(Stdin);
 			exit(EXIT_SUCCESS);
 		}
 		else if (input == '\n')
@@ -73,7 +73,7 @@ char *read_strm(void)
 			Stdin = realloc(Stdin, n);
 			if (Stdin == NULL)
 			{
-				fprint(stderr, "read_strm: realloc failed");
+				fprintf(stderr, "read_strm: realloc failed");
 				exit(EXIT_FAILURE);
 			}
 		}

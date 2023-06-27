@@ -19,7 +19,7 @@ int execute(char **argv)
 	int (*builtins[])(char **) = {
 		&_cd,
 		&_env,
-		&_exit
+		&endprog
 		/* &_help */
 	};
 	unsigned long int i = 0;

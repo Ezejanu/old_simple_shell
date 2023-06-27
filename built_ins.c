@@ -1,26 +1,24 @@
 #include "main.h"
 
 /**
- * _exit - a function to terminate the process and exit the shell
+ * endprog - a function to terminate the process and exit the shell
  * @argv: a string containing commands to be exited from
  * Return: 0 to end the process and exit the terminal
  */
 
-int _exit(char **argv)
+int endprog(char **argv)
 {
 	int i;
 
 	i = atoi(argv[1]);
 
-	if (args[1])
+	if (argv[1])
 	{
 		return (i);
 	}
 
 	else
-	{
 		return (0);
-	}
 }
 
 
@@ -53,7 +51,7 @@ int _env(char **argv)
  * Return: (-1) on success, (0) for failure
  */
 
-int _cd(char **argv);
+int _cd(char **argv)
 {
 	if (argv[1] == NULL)
 	{
@@ -61,7 +59,7 @@ int _cd(char **argv);
 	}
 	else
 	{
-		if (chdir(args[1]) != 0)
+		if (chdir(argv[1]) != 0)
 			perror("Error");
 	}
 	return (-1);

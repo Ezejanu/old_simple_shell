@@ -25,4 +25,5 @@ void interactive_mode(void)
 			exit(status);
 	} while
 		(status == -1);
+		free(Stdin);
 }

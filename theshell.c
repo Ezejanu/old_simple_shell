@@ -10,11 +10,11 @@ int main(void)
 {
 	if (isatty(STDIN_FILENO) == 0)
 	{
-		non_interactive_mode;
+		non_interactive_mode();
 	}
 	else if (isatty(STDIN_FILENO) == 1)
 	{
-		interactive_mode;
+		interactive_mode();
 	}
 
 	return (0);
